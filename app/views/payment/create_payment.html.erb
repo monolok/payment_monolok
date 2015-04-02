@@ -1,3 +1,19 @@
+<div class="container-full">
+
+      <div class="row">
+       
+        <div class="col-lg-12 text-center v-center">
+          
+          <h1>Thank you</h1>
+          <p class="lead">You paid $ <%= @amount.to_i/100%> and an invoice has been sent to <%= params[:stripeEmail]%></p>
+          
+          <br><br><br>
+
+          You paid for: <%= @description%>
 
 
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+        </div>
+        
+      </div> <!-- /row -->
+</div>
+
