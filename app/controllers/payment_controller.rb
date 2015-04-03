@@ -1,11 +1,23 @@
 class PaymentController < ApplicationController
 
-	def welcome_payment
+	def welcome
 
 	end
 
 	def new_payment
-		if not params[:amount].nil? and not params[:description].nil?
+		if params[:amount].empty? and not params[:description].empty?
+			flash[:notice] = "Amount can not be blank"
+			# redirect_to root_path
+			render :action => 'welcome'
+		elsif params[:description].empty? and not params[:amount].empty?
+			flash[:notice] = "Write short description for invoice"
+			# redirect_to root_path
+			render :action => 'welcome'
+		elsif params[:amount].empty? and params[:description].empty?
+			flash[:notice] = "Amount and description can not be blank"
+			render :action => 'welcome'
+			# redirect_to root_path
+		else
 			flash[:amount] = params[:amount]
 			flash.keep(:amount)
 			flash[:description] = params[:description]
