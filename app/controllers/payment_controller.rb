@@ -40,7 +40,8 @@ class PaymentController < ApplicationController
 		:customer    => customer.id,
 		:amount      => @amount,
 		:description => @description,
-		:currency    => 'eur'
+		:currency    => 'eur',
+		:metadata	 => {'receipt_email' => params[:stripeEmail]}
 		)
 
 		rescue Stripe::CardError => e
