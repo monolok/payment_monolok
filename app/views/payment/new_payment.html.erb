@@ -15,6 +15,7 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= params[:description]%>"
+          data-currency="eur"          
           data-amount="<%= params[:amount].to_i*100%>"
 
           ></script>

@@ -40,7 +40,7 @@ class PaymentController < ApplicationController
 		:customer    => customer.id,
 		:amount      => @amount,
 		:description => @description,
-		:currency    => 'usd'
+		:currency    => 'eur'
 		)
 
 		rescue Stripe::CardError => e
