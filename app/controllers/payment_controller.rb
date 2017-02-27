@@ -10,13 +10,16 @@ class PaymentController < ApplicationController
 			# redirect_to root_path
 			render :action => 'welcome'
 		elsif params[:description].empty? and not params[:amount].empty?
-			flash[:notice] = "Write short description for invoice"
+			flash[:notice] = "Write your bitcoin address"
 			# redirect_to root_path
 			render :action => 'welcome'
 		elsif params[:amount].empty? and params[:description].empty?
-			flash[:notice] = "Amount and description can not be blank"
+			flash[:notice] = "Amount and BTC address can not be blank"
 			render :action => 'welcome'
 			# redirect_to root_path
+		elsif params[:amount] <= 99
+			flash[:notice] = "Minimum to spend is 100 € or equivalent"
+			render :action => 'welcome'
 		else
 			flash[:amount] = params[:amount]
 			flash.keep(:amount)
