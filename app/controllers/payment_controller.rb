@@ -17,7 +17,7 @@ class PaymentController < ApplicationController
 			flash[:notice] = "Amount and BTC address can not be blank"
 			render :action => 'welcome'
 			# redirect_to root_path
-		elsif params[:amount] <= 99
+		elsif params[:amount].to_f <= 99
 			flash[:notice] = "Minimum to spend is 100 € or equivalent"
 			render :action => 'welcome'
 		else
