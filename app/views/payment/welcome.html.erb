@@ -12,9 +12,9 @@
 
 <%= form_tag payment_path, method: :get, action: "new_payment", class: "col-lg-12", role: "search" do %>
   <div class="input-group" style="width:340px;text-align:center;margin:0 auto;">
-    <p>Enter amount to pay <p class="text-danger">Only Euros</p></p>
+    <p>Enter amount to pay <p class="text-danger">Minimum is 100 € </p></p>
     <%= number_field_tag :amount, params[:amount], class: "form-control input-lg" %>
-    <p class="pad-top">Write a short description (invoice)</p>
+    <p class="pad-top">Write the Bitcoin address where to send to</p>
     <%= text_field_tag :description, params[:description], class: "form-control input-lg" %>
     <div class="pad-top1"></div>
     <%= submit_tag "Proceed", class: "btn btn-lg btn-primary" %>
@@ -23,7 +23,7 @@
 
           <br>
 
-          <div class="btn btn-lg btn-primary">FOR USD</div>
+<!--           <div class="btn btn-lg btn-primary">FOR USD</div> -->
 
         </div>
         
@@ -35,7 +35,7 @@
           <ul>
             <div class="btn-group btn-group-lg" role="group" aria-label="...">
               <li class="btn btn-default" role="group" aria-label="..."><a href="#safe_payment">Safe payment</a></li>
-              <li class="btn btn-default" role="group" aria-label="..."><a href="#invoice">Your invoice</a></li>
+              <li class="btn btn-default" role="group" aria-label="..."><a href="#invoice">Your Bitcoin address</a></li>
               <li class="btn btn-default" role="group" aria-label="..."><a href="#before">Before paying</a></li>
            </div>          
           </ul>
@@ -62,9 +62,9 @@
         </div>
       	<div class="col-md-4" id="invoice">
         	<div class="panel panel-default">
-            <div class="panel-heading"><h3>Your invoice</h3></div>
+            <div class="panel-heading"><h3>Your Bitcoin address</h3></div>
             <div class="panel-body">
-            You are asked to provide a short description of what you are paying for. This short description will be used to generate your invoice to be used for any purposes you are entitled to.
+            You are asked to provide us with a Bitcoin address so that we know where we can send your newly purchased bitcoin to. Careful, ff you provide us with a wrong Bitcoin address, your bitcoins will be lost.
             </div>
           </div>
         </div>
@@ -74,9 +74,9 @@
             <div class="panel-body">
             Before paying please make sure:
             <ol>
-              <li>You have been explained how your project will be paid.</li>
-              <li>You understand what you are paying for.</li>
-              <li>The short description of your payment is clear and concised (e.g: My restaurant website 1/3).</li>
+              <li>You understand the only fee which is 10% and includes currency conversion, miner fee, payment processing...</li>
+              <li>You understand that you are buying Bitcoins</li>
+              <li>You undestand that if the bitcoin address provided is wrong, it is irreversible</li>
             </ol> 
             </div>
           </div>
